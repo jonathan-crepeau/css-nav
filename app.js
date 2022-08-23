@@ -35,18 +35,37 @@
 
 // SECTION - Remove Listeners
 
-const controller = new AbortController();
+// const controller = new AbortController();
 
-btn = document.querySelector('button');
+// btn = document.querySelector('button');
 
-btn.addEventListener('click', () => {
-    const randomColor = `rgb(${rgbValues()}, ${rgbValues()}, ${rgbValues()})`;
-    document.body.style.backgroundColor = randomColor;
-}, { signal: controller.signal });
+// btn.addEventListener('click', () => {
+//     const randomColor = `rgb(${rgbValues()}, ${rgbValues()}, ${rgbValues()})`;
+//     document.body.style.backgroundColor = randomColor;
+// }, { signal: controller.signal });
+
+// function rgbValues() {
+//     return Math.floor(Math.random() * (255 - 0 + 1) + 0);
+// }
+
+// console.log('end it!');
+// controller.abort();
+
+
+
+// SECTION - Event Handler Properties
+
+const btn = document.querySelector('button');
 
 function rgbValues() {
     return Math.floor(Math.random() * (255 - 0 + 1) + 0);
 }
 
-console.log('end it!');
-controller.abort();
+function changeColor() {
+    const randomColor = `rgb(${rgbValues()}, ${rgbValues()}, ${rgbValues()})`;
+    document.body.style.backgroundColor = randomColor;
+}
+
+// NOTE - I chose to write a separate changeColor function that is used instead of an anonymous function. I dont know if that would be considered a callback?
+btn.onclick = changeColor;
+// btn.onmouseover = changeColor;
