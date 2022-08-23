@@ -16,7 +16,8 @@
 
 
 
-// SECTION - Event Listener Example: Change Background Color:
+// SECTION - Event Listener Example: Change Background Color w/ Event Type 'focus' & 'blur', 'mouseover' & 'mouseout':
+
 const btn = document.querySelector('button');
 
 function changeColor() {
@@ -28,6 +29,6 @@ function rgbValues() {
     return Math.floor(Math.random() * (255 - 0 + 1) + 0);
 }
 
-btn.addEventListener('click', changeColor);
+btn.addEventListener('mouseout', changeColor);
 
 
